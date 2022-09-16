@@ -1,0 +1,16 @@
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+nav > ul > li {
+  display: block;
+  width: 15%;
+  text-align: center;
+}
+
+nav > ul > li:hover {
+  cursor: pointer;
+}
