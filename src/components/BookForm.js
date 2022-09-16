@@ -2,8 +2,8 @@ import React from 'react';
 
 const BookForm = () => (
   <form>
-    <input type="text" />
-    <input type="checkbox" />
+    <input className="book-name" type="text" placeholder="Please enter your book name" />
+    <input className="book-author" type="text" placeholder="author" />
     <button type="button">SUBMIT</button>
   </form>
 );

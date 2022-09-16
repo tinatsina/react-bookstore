@@ -1,11 +1,14 @@
 import React from 'react';
+import '../style/Book.css';
 
 const Book = () => (
-  <div>
-    <h1>
-      THE BOOK IN QUESTION ONE
-    </h1>
-  </div>
+  <>
+    <div className="author-title-container">
+      <h3>Author</h3>
+      <p>Title</p>
+    </div>
+    <button className="delete-button" type="button">DELETE</button>
+  </>
 );
 
 export default Book;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import '../style/Navbar.css';
+import '../style/Navbar.model.css';
 import Books from './Books';
 import Categories from './Categories';
 
