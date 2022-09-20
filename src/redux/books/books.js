@@ -1,7 +1,10 @@
+const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
+const DEL_BOOK = 'react-bookstore/books/DEL_BOOK';
+
 const initialState = [];
 
-export const ADD_BOOK = (data) => ({ type: 'ADD_BOOK', data });
-export const DEL_BOOK = (data) => ({ type: 'DEL_BOOK', data });
+export const addBook = (data) => ({ type: 'ADD_BOOK', data });
+export const deleteBook = (data) => ({ type: 'DEL_BOOK', data });
 
 const Booksreducer = (state = initialState, action) => {
   switch (action.type) {
