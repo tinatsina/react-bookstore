@@ -1,6 +1,6 @@
 const initialState = [];
 
-export const CHECK_STATUS = (payload) => ({ type: CHECK_STATUS, payload });
+export const CHECK_STATUS = (data) => ({ type: CHECK_STATUS, data });
 
 const Categoriesreducer = (state = initialState, action) => {
   switch (action.type) {
