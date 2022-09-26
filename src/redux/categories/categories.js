@@ -2,7 +2,7 @@ const CHECK_STATUS = 'react-bookstore/categories/CHECK_STATUS';
 
 const initialState = [];
 
-export const checkStatus = (data) => ({ type: CHECK_STATUS, data });
+export const checkStatus = () => ({ type: CHECK_STATUS });
 
 const Categoriesreducer = (state = initialState, action) => {
   switch (action.type) {

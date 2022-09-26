@@ -13,7 +13,7 @@ const Navbar = () => (
           <Link to="/">Books</Link>
         </li>
         <li>
-          <Link to="Categories">Caategories</Link>
+          <Link to="Categories">Categories</Link>
         </li>
       </ul>
     </nav>
