@@ -11,6 +11,7 @@ const Books = () => {
       {state.books.map((book) => (
         <Book
           key={book.id}
+          bookID={book.id}
           bookTitle={book.title}
           bookAuthor={book.author}
         />
