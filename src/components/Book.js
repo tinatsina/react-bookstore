@@ -1,4 +1,3 @@
-import React from 'react';
 import '../style/Book.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
