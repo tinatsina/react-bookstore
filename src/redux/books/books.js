@@ -28,12 +28,12 @@ export const addNewbook = (data) => (dispatch) => fetch(
   },
 )
   .then((response) => response.text())
-  .then(() => dispatch({ type: ADD_BOOK, data }));
+  .then(() => dispatch(fetchBookList()));
 
 // Asynchronous delete book action
 export const deleteBook = (bookID) => (dispatch) => fetch(BASE_URL + bookID, { method: 'DELETE' })
   .then((response) => response.text())
-  .then((json) => dispatch({ type: DEL_BOOK, payload: json }));
+  .then(() => dispatch(fetchBookList()));
 
 const Booksreducer = (state = initialState, action) => {
   switch (action.type) {
