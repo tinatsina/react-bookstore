@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import '../style/BookForm.css';
-import { addBook } from '../redux/books/books';
+import { addNewbook } from '../redux/books/books';
 
 const BookForm = () => {
   // Use dispatch handler for actions
@@ -12,13 +12,14 @@ const BookForm = () => {
     event.preventDefault();
     // Create payload as object
     const newBookObject = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: event.target.bookTitle.value,
       author: event.target.bookAuthor.value,
+      category: 'Action',
     };
 
     // Dispatch the action to the store
-    dispatch(addBook(newBookObject));
+    dispatch(addNewbook(newBookObject));
   };
 
   return (
