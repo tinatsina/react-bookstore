@@ -2,7 +2,7 @@ const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DEL_BOOK = 'react-bookstore/books/DEL_BOOK';
 const FETCH_API = 'react-bookstore/books/FETCH_DATA';
 const ERR_API = 'react-bookstore/books/ERR_API';
-const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/taEIPwAYCGFy8Z4duEsC/books';
+const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/taEIPwAYCGFy8Z4duEsC/books/';
 
 const initialState = {
   books: [{ item2: [{ author: '', category: '', title: '' }] }],
@@ -31,14 +31,16 @@ export const addNewbook = (data) => (dispatch) => fetch(
   .then(() => dispatch({ type: ADD_BOOK, data }));
 
 // Asynchronous delete book action
-export const deleteBook = () => (dispatch) => fetch()
+export const deleteBook = (bookID) => (dispatch) => fetch(BASE_URL + bookID, { method: 'DELETE' })
+  .then((response) => response.text())
+  .then((json) => dispatch({ type: DEL_BOOK, payload: json }));
 
 const Booksreducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return { books: [...state.books, action.data] };
     case DEL_BOOK:
-      return { books: [...state.books.filter((book) => book.id !== action.data)] };
+      return state;
     case FETCH_API:
       return { books: [action.payload] };
     case ERR_API:
