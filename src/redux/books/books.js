@@ -18,13 +18,14 @@ export const fetchBookList = createAsyncThunk(FETCH_API, async () => {
 });
 
 // Asynchronous Thunk Based AddBook
-export const addNewbook = createAsyncThunk(ADD_BOOK, async (data) => {
+export const addNewbook = createAsyncThunk(ADD_BOOK, async (data, thunkAPI) => {
   fetch(BASE_URL,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
+  thunkAPI.dispatch(fetchBookList());
 });
 
 // Asynchronous Thunk Based deletebook
@@ -36,7 +37,7 @@ export const deleteBook = createAsyncThunk(DEL_BOOK, async (bookID, thunkAPI) =>
 const Booksreducer = (state = initialState, action) => {
   switch (action.type) {
     case `${ADD_BOOK}/fulfilled`:
-      return { books: [...state.books, action.data] };
+      return state;
     case `${DEL_BOOK}/fulfilled`:
       return state;
     case `${FETCH_API}/fulfilled`:

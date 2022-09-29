@@ -12,8 +12,6 @@ const Books = () => {
     dispatch(fetchBookList());
   }, [dispatch]);
 
-  // console.log(state.books[0]['item2'][0].title);
-
   const bookIndex = Object.keys(state.books[0]);
 
   return (
