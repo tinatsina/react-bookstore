@@ -15,11 +15,13 @@ const Book = ({ bookTitle, bookAuthor, bookID }) => {
     <li className="book-item-component">
       <div className="author-title-container">
         <p className="book-category">Action</p>
-        <h3 className="book-card-author">{bookAuthor}</h3>
         <p className="book-title">{bookTitle}</p>
+        <h3 className="book-card-author">{bookAuthor}</h3>
         <ul className="book-actions-list">
           <li>Comments</li>
+          <li className="vertical-line" />
           <li>Remove</li>
+          <li className="vertical-line" />
           <li>Edit</li>
         </ul>
       </div>
@@ -30,7 +32,7 @@ const Book = ({ bookTitle, bookAuthor, bookID }) => {
         <div className="Line-2" />
       </div>
       <div className="button-chapter-details">
-        <span className="Current-Chapter">Current Chapter </span>
+        <span className="Current-Chapter">CURRENT CHAPTER </span>
         <span className="Current-Lesson"> Chapter 17 </span>
         <button className="delete-button" type="button" onClick={() => deleteBookHandler(bookID)}>DELETE</button>
       </div>
