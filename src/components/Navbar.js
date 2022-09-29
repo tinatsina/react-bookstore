@@ -8,7 +8,7 @@ const Navbar = () => (
   <>
     <nav>
       <ul>
-        <li>BOOKSTORE</li>
+        <li className="logo-icon">BOOKSTORE CMS</li>
         <li>
           <Link to="/">Books</Link>
         </li>

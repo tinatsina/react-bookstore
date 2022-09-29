@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #fff;
+  height: 5.938rem;
+  padding: 1.438rem 3rem 0 3rem;
+}
+
 nav > ul {
   display: flex;
   flex-direction: row;
@@ -6,11 +19,38 @@ nav > ul {
 }
 
 nav > ul > li {
-  display: block;
-  width: 15%;
-  text-align: center;
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-family: Montserrat, cursive;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  list-style: none;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
 }
 
 nav > ul > li:hover {
   cursor: pointer;
+}
+
+.logo-icon {
+  width: 18rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: Montserrat, cursive;
+  font-size: 1.875rem;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
 }
