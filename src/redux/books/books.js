@@ -17,18 +17,6 @@ export const fetchBookList = createAsyncThunk(FETCH_API, async () => {
   return payload;
 });
 
-// // Asynchronous create new book action
-// export const addNewbook = (data) => (dispatch) => fetch(
-//   BASE_URL,
-//   {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(data),
-//   },
-// )
-//   .then((response) => response.text())
-//   .then(() => dispatch(fetchBookList()));
-
 // Asynchronous Thunk Based AddBook
 export const addNewbook = createAsyncThunk(ADD_BOOK, async (data) => {
   fetch(BASE_URL,
@@ -40,8 +28,9 @@ export const addNewbook = createAsyncThunk(ADD_BOOK, async (data) => {
 });
 
 // Asynchronous Thunk Based deletebook
-export const deleteBook = createAsyncThunk(DEL_BOOK, async (bookID) => {
+export const deleteBook = createAsyncThunk(DEL_BOOK, async (bookID, thunkAPI) => {
   await fetch(BASE_URL + bookID, { method: 'DELETE' });
+  thunkAPI.dispatch(fetchBookList());
 });
 
 const Booksreducer = (state = initialState, action) => {
