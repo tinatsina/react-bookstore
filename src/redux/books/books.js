@@ -10,44 +10,45 @@ const initialState = {
   books: [{ item2: [{ author: '', category: '', title: '' }] }],
 };
 
-// Synchronous action creators
-// export const addBook = (data) => ({ type: ADD_BOOK, data });
-// export const deleteBook = (data) => ({ type: DEL_BOOK, data });
-
-// Asynchronous fetch book action
-// export const fetchBookList = () => (dispatch) => fetch(BASE_URL)
-//   .then((response) => response.json())
-//   .then((json) => dispatch({ type: FETCH_API, payload: json }))
-//   .catch((err) => dispatch({ type: ERR_API, err_message: err }));
-
 // Create Async Thunk based action
 export const fetchBookList = createAsyncThunk(FETCH_API, async () => {
   const response = await fetch(BASE_URL);
   const payload = await response.json();
   return payload;
 });
-// Asynchronous create new book action
-export const addNewbook = (data) => (dispatch) => fetch(
-  BASE_URL,
-  {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  },
-)
-  .then((response) => response.text())
-  .then(() => dispatch(fetchBookList()));
 
-// Asynchronous delete book action
-export const deleteBook = (bookID) => (dispatch) => fetch(BASE_URL + bookID, { method: 'DELETE' })
-  .then((response) => response.text())
-  .then(() => dispatch(fetchBookList()));
+// // Asynchronous create new book action
+// export const addNewbook = (data) => (dispatch) => fetch(
+//   BASE_URL,
+//   {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(data),
+//   },
+// )
+//   .then((response) => response.text())
+//   .then(() => dispatch(fetchBookList()));
+
+// Asynchronous Thunk Based AddBook
+export const addNewbook = createAsyncThunk(ADD_BOOK, async (data) => {
+  fetch(BASE_URL,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+});
+
+// Asynchronous Thunk Based deletebook
+export const deleteBook = createAsyncThunk(DEL_BOOK, async (bookID) => {
+  await fetch(BASE_URL + bookID, { method: 'DELETE' });
+});
 
 const Booksreducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case `${ADD_BOOK}/fulfilled`:
       return { books: [...state.books, action.data] };
-    case DEL_BOOK:
+    case `${DEL_BOOK}/fulfilled`:
       return state;
     case `${FETCH_API}/fulfilled`:
       return { books: [action.payload] };
