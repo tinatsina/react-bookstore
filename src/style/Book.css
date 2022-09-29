@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .book-item-component {
+  display: flex;
   list-style: none;
   margin: 2.313rem 2.5rem 0;
   padding: 2rem 0.75rem 1.625rem 0.75rem;
@@ -9,7 +12,7 @@
 
 .author-title-container {
   display: inline-block;
-  width: 80%;
+  width: 50%;
 }
 
 .author-title-container > h3 {
@@ -21,9 +24,128 @@
 }
 
 .delete-button {
-  width: 10%;
+  width: 8rem;
+  height: 2.5rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  color: #fff;
+  font-family: Montserrat, cursive;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  background-color: #69b1e9;
+  transform: scale(1.01);
 }
 
 .book-list-container {
   padding-left: 0;
+}
+
+.book-actions-list {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+}
+
+.book-actions-list > li {
+  width: 6.5em;
+  list-style: none;
+}
+
+.book-category,
+.book-card-author,
+.book-actions-list > li {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.book-title {
+  font-family: Roboto, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.round {
+  width: 65px;
+  height: 65px;
+  border: 6px solid #379cf6;
+  border-radius: 50%;
+  border-right: 6px solid #fff;
+  border-bottom: 6px solid #fff;
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+.sixty-four-percent {
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.sixty-four-percent-completed {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin: 0 0;
+}
+
+.button-chapter-details {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.percentage-completion-block {
+  width: 25%;
+}
+
+.Current-Chapter {
+  opacity: 0.5;
+  font-family: Roboto, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 0.5em;
+}
+
+.Current-Lesson {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-bottom: 2em;
 }
