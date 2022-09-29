@@ -1,3 +1,5 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DEL_BOOK = 'react-bookstore/books/DEL_BOOK';
 const FETCH_API = 'react-bookstore/books/FETCH_DATA';
@@ -13,11 +15,17 @@ const initialState = {
 // export const deleteBook = (data) => ({ type: DEL_BOOK, data });
 
 // Asynchronous fetch book action
-export const fetchBookList = () => (dispatch) => fetch(BASE_URL)
-  .then((response) => response.json())
-  .then((json) => dispatch({ type: FETCH_API, payload: json }))
-  .catch((err) => dispatch({ type: ERR_API, err_message: err }));
+// export const fetchBookList = () => (dispatch) => fetch(BASE_URL)
+//   .then((response) => response.json())
+//   .then((json) => dispatch({ type: FETCH_API, payload: json }))
+//   .catch((err) => dispatch({ type: ERR_API, err_message: err }));
 
+// Create Async Thunk based action
+export const fetchBookList = createAsyncThunk(FETCH_API, async () => {
+  const response = await fetch(BASE_URL);
+  const payload = await response.json();
+  return payload;
+});
 // Asynchronous create new book action
 export const addNewbook = (data) => (dispatch) => fetch(
   BASE_URL,
@@ -41,7 +49,7 @@ const Booksreducer = (state = initialState, action) => {
       return { books: [...state.books, action.data] };
     case DEL_BOOK:
       return state;
-    case FETCH_API:
+    case `${FETCH_API}/fulfilled`:
       return { books: [action.payload] };
     case ERR_API:
       return state;
