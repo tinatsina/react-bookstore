@@ -23,11 +23,15 @@ const BookForm = () => {
   };
 
   return (
-    <form onSubmit={formCheck}>
-      <input name="bookTitle" className="book-name" type="text" placeholder="Please enter your book name" />
-      <input name="bookAuthor" className="book-author" type="text" placeholder="Author name" />
-      <button type="submit">SUBMIT</button>
-    </form>
+    <>
+      <div className="Line" />
+      <span className="Title">ADD NEW BOOK</span>
+      <form onSubmit={formCheck}>
+        <input name="bookTitle" className="book-name" type="text" placeholder="Please enter your book name" />
+        <input name="bookAuthor" className="book-author" type="text" placeholder="Author name" />
+        <button type="submit" className="Rectangle-2">ADD BOOK</button>
+      </form>
+    </>
   );
 };
 

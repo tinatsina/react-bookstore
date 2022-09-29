@@ -1,3 +1,12 @@
+.book-item-component {
+  list-style: none;
+  margin: 2.313rem 2.5rem 0;
+  padding: 2rem 0.75rem 1.625rem 0.75rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
 .author-title-container {
   display: inline-block;
   width: 80%;
@@ -13,4 +22,8 @@
 
 .delete-button {
   width: 10%;
+}
+
+.book-list-container {
+  padding-left: 0;
 }

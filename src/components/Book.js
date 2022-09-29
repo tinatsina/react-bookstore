@@ -12,13 +12,13 @@ const Book = ({ bookTitle, bookAuthor, bookID }) => {
   };
 
   return (
-    <>
+    <li className="book-item-component">
       <div className="author-title-container">
         <h3>{bookAuthor}</h3>
         <p>{bookTitle}</p>
       </div>
       <button className="delete-button" type="button" onClick={() => deleteBookHandler(bookID)}>DELETE</button>
-    </>
+    </li>
   );
 };
 
